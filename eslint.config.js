@@ -46,8 +46,13 @@ export default defineConfig([
     },
     settings: {
       react: {
+        // 自动检测 React 版本
         version: "detect",
       },
     },
+    rules: {
+      // 关闭 React 中禁止使用未转义实体的规则
+      "react/no-unescaped-entities": "off",
+    }
   },
 ]);

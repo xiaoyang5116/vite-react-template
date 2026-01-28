@@ -1,4 +1,5 @@
-import { createRootRoute } from "@tanstack/react-router";
+import { createRootRoute, Outlet } from "@tanstack/react-router";
+import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 
 export const Route = createRootRoute({
   component: RootLayout,
@@ -6,10 +7,9 @@ export const Route = createRootRoute({
 
 function RootLayout() {
   return (
-    <div className="min-h-screen bg-linear-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-      <h1 className="text-4xl font-bold text-white">
-        欢迎使用 Vite + React + Tailwind CSS
-      </h1>
-    </div>
+    <>
+      <Outlet />
+      <TanStackRouterDevtools />
+    </>
   );
 }
